@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!env sh
 
 # parse argument list
 
