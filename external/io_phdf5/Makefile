@@ -16,7 +16,7 @@ AR      = ar
 all : libwrfio_phdf5.a 
 
 libwrfio_phdf5.a:		$(OBJS)
-			/bin/rm -f libwrfio_phdf5.a
+			rm -f libwrfio_phdf5.a
 			$(AR) cr libwrfio_phdf5.a $(OBJSL)
 			$(RANLIB) libwrfio_phdf5.a
 
@@ -32,8 +32,8 @@ wrf-phdf5.o:             wrf-phdf5.F90 wrf-phdf5attr.o wrf-phdf5support.o
 			$(FC) $(FFLAGS) -c wrf-phdf5.f90
 
 clean:
-	@/bin/rm -f *.f90 *.o *.mod
+	@rm -f *.f90 *.o *.mod
 
 superclean: clean
-	@/bin/rm -f libwrfio_phdf5.a
+	@rm -f libwrfio_phdf5.a
 

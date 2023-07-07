@@ -4,9 +4,9 @@
 <meta name="ProgId" content="FrontPage.Editor.Document">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>To integrate HDF5</title></head><body><big><big><b>Build and Install the HDF5-WRF IO Module</b></big></big><br>
 <br>
-There are two HDF5 WRF IO modules, <i>sequential</i> and <i>parallel.</i>  The either or both modules can be configured as optional IO modules for WRF.<br>
+There are two HDF5 WRF IO modules, <i>sequential</i> and <i>parallel.</i> ï¿½The either or both modules can be configured as optional IO modules for WRF.<br>
 <br>
-The sequential HDF module (<i>io_hdf5</i>) uses the serial HDF5 library.  The parallel
+The sequential HDF module (<i>io_hdf5</i>) uses the serial HDF5 library. ï¿½The parallel
 HDF module (<i>io_phdf5</i>) uses parallel HDF5 (which requires MPI-IO).<br>
 <br>
 The installation for the two modules is similar.<br>
@@ -15,7 +15,7 @@ The installation for the two modules is similar.<br>
 <br>
 <b>WRF 1.3</b><br>
 <br>
-The HDF5 WRF IO modules require Version 1.3 of WRF.  Information and downloads are available at:<br>
+The HDF5 WRF IO modules require Version 1.3 of WRF. ï¿½Information and downloads are available at:<br>
  
 <blockquote><a href="http://www.mmm.ucar.edu/wrf/users/user_main.html">http://www.mmm.ucar.edu/wrf/users/user_main.html</a><br>
 </blockquote>
@@ -31,13 +31,13 @@ Installing HDF5<br>
 <ol>
   <li>To obtain 
   HDF5, download from to <a href="http://hdf.ncsa.uiuc.edu/HDF5/release/obtain5.html">
-  http://hdf.ncsa.uiuc.edu/HDF5/release/obtain5.html</a>. Install HDF5 according to the instructions. The HDF5 library must have he Fortran 90 interface installed. <br><br>
- For the sequential WRF module,  SZIP compression can be enabled.  </li>
+  http://hdf.ncsa.uiuc.edu/HDF5/release/obtain5.html</a>. Install HDF5 according to the instructions. The HDF5 library must have he Fortran 90 interface installed.ï¿½<br><br>
+ For the sequential WRF module,ï¿½ SZIP compression can be enabled.ï¿½ </li>
   <li>
 For the parallel WRF module, parallel HDF5 must be installed (this requires MPI-IO). <br>
 Set the environment variable PHDF5 = &lt;&lt;path where phdf5 is installed&gt;&gt;.
   
-   </li>
+  ï¿½</li>
 
   <li>For the sequential HDF WRF IO module, either serial or parallel HDF must be installed.<br>
 The HDF library may be installed with the optional SZIP compression enabled. <br>
@@ -92,7 +92,7 @@ NCSA IBM P690</small></small></font></small></small>.<br>
 <br>
 <big><b>Installation of the HDF5 WRF IO Modules</b></big><br>
 <br>
-The HDF5 WRF IO modules are used by adding it to a standard WRF configuration.  This process has four main steps<br>
+The HDF5 WRF IO modules are used by adding it to a standard WRF configuration. ï¿½This process has four main steps<br>
 <ol>
   <li>Downoad the HDF WRF IO module(s)</li><li>Add the HDF5 WRF IO module(s) as an "extern" module</li>
 
@@ -107,9 +107,9 @@ The parallel, sequential, or both may be configured.<br>
 <br>
 The HDF WRF IO modules are available from:<br>
 <ul>
-  <li>sequential: <a href="ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/wrf-hdf5-modules/io_hdf5.tar">
+  <li>sequential:ï¿½<a href="ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/wrf-hdf5-modules/io_hdf5.tar">
     ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/wrf-hdf5-modules/io_hdf5.tar</a></li>
-  <li>parallel: 
+  <li>parallel:ï¿½
     <a href="ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/wrf-hdf5-modules/io_phdf5.tar">
     ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/wrf-hdf5-modules/io_phdf5.tar</a><br>
   </li>
@@ -142,7 +142,7 @@ tar xvf io_phdf5.tar<br>
       <tr>
         <td valign="top">contents of the sequential HDF WRF IO module:<br>
       <br>
-  ./io_hdf5<br>  ./io_hdf5/wrf-hdf5.F90<br>  ./io_hdf5/wrf_status_codes.h<br>  ./io_hdf5/Makefile<br>  ./io_hdf5/wrf-hdf5attr.F90<br>  ./io_hdf5/wrf-hdf5support.F90<br>  ./io_hdf5/wrf_io_flags.h<br>
+ï¿½ ./io_hdf5<br>ï¿½ ./io_hdf5/wrf-hdf5.F90<br>ï¿½ ./io_hdf5/wrf_status_codes.h<br>ï¿½ ./io_hdf5/Makefile<br>ï¿½ ./io_hdf5/wrf-hdf5attr.F90<br>ï¿½ ./io_hdf5/wrf-hdf5support.F90<br>ï¿½ ./io_hdf5/wrf_io_flags.h<br>
         </td>
       </tr>
     </tbody>
@@ -163,7 +163,7 @@ tar xvf io_phdf5.tar<br>
       <tr>
         <td valign="top">contents of the sequential HDF WRF IO module:<br>
       <br>
-  ./io_phdf5/<br>  ./io_phdf5/Makefile<br>  ./io_phdf5/wrf_status_codes.h<br>  ./io_phdf5/wrf-phdf5attr.F90<br>  ./io_phdf5/wrf-phdf5support.F90<br>  ./io_phdf5/wrf_io_flags.h<br>  ./io_phdf5/wrf-phdf5.F90<br>
+ï¿½ ./io_phdf5/<br>ï¿½ ./io_phdf5/Makefile<br>ï¿½ ./io_phdf5/wrf_status_codes.h<br>ï¿½ ./io_phdf5/wrf-phdf5attr.F90<br>ï¿½ ./io_phdf5/wrf-phdf5support.F90<br>ï¿½ ./io_phdf5/wrf_io_flags.h<br>ï¿½ ./io_phdf5/wrf-phdf5.F90<br>
         </td>
       </tr>
     </tbody>
@@ -179,7 +179,7 @@ tar xvf io_phdf5.tar<br>
 <p><small><small><font size="5"><small><small>In the sequential HDF5 WRF
 IO modules, arrays larger thatn 8096 bytes are compressed by default. In
 this case, the HDF5 dataset is configured to use the shuffle filter plus deflate
-(GZIP) compression, with compression level 6.  <br>
+(GZIP) compression, with compression level 6. ï¿½<br>
 </small></small></font></small></small></p>
 
 
@@ -194,11 +194,11 @@ users to change this default. To modify this behavior, it is necessary to modify
   <p><small><font size="5"><small><small>Edit</small></small></font><font size="4"><small> the file '</small></font></small><small><font size="4"><small>wrf/external/io_hdf5/</small></font></small><small><font size="4"><small>wrf-hdf5.F90</small></font></small><small><font size="4"><small>'<br>
 </small></font></small></p>
   <p><small><font size="4"><small>Comment out the lines: </small></font></small></p>
-  <p><small><font face="Arial" size="4"><small>            
+  <p><small><font face="Arial" size="4"><small>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 call h5pset_shuffle_f(crp_list,hdf5err) </small></font></small></p>
-  <p><small><font size="4"><small>                
+  <p><small><font size="4"><small>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 and </small></font></small></p>
-  <p><small><font size="4" face="Arial"><small>            
+  <p><small><font size="4" face="Arial"><small>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 call h5pset_deflate_f(crp_list,6,hdf5err) </small></font></small></p>
 </blockquote>
 
@@ -210,30 +210,30 @@ call h5pset_deflate_f(crp_list,6,hdf5err) </small></font></small></p>
 
 
 
-<p><i><small><small><font size="5"><small><small>To use  SZIP compression instead:</small></small></font></small></small></i></p>
+<p><i><small><small><font size="5"><small><small>To useï¿½ SZIP compression instead:</small></small></font></small></small></i></p>
 
 
 <blockquote>
-  <p><small><font size="4"><small>For SZIP information and downloads, see the szip at 
+  <p><small><font size="4"><small>For SZIP information and downloads, see the szip atï¿½
 <a href="http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/">
 http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/</a>.<br>
 </small></font></small></p>
   <p><small><font size="4"><small>Edit the file 'wrf/external/io_hdf5/</small></font></small><small><font size="4"><small>wrf-hdf5.F90'.</small></font></small></p>
   <p><small><font size="4"><small>Comment out the lines: </small></font></small></p>
-  <p><small><font face="Arial" size="4"><small>            
+  <p><small><font face="Arial" size="4"><small>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 call h5pset_shuffle_f(crp_list,hdf5err) </small></font></small></p>
-  <p><small><font size="4"><small>                
+  <p><small><font size="4"><small>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 and </small></font></small></p>
-  <p><small><font size="4" face="Arial"><small>            
+  <p><small><font size="4" face="Arial"><small>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 call h5pset_deflate_f(crp_list,6,hdf5err) </small></font></small></p>
   <p><small><font size="4"><small>Uncomment the line:
 </small></font></small></p>
-  <p><small><font size="4"><small>             
+  <p><small><font size="4"><small>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 <font face="Arial">call 
 h5pset_szip_f(crp_list,H5_SZIP_AK13_OM_F+H5_SZIP_NN_OM_F,8,hdf5err)</font><br>
 </small></font></small></p>
   <p><small><font size="4"><small>Change the value 
-of the parameters in the function <i>h5pset_szip_f</i> if necessary.</small></font></small>  See the SZIP documentation for more information about the parameters.<br>
+of the parameters in the function <i>h5pset_szip_f</i> if necessary.</small></font></small> ï¿½See the SZIP documentation for more information about the parameters.<br>
   </p>
 </blockquote>
 
@@ -258,7 +258,7 @@ of the parameters in the function <i>h5pset_szip_f</i> if necessary.</small></fo
 <p><font size="4"><b><small>3. Modifications to WRF files</small></b><br>
 </font></p>
 
-<p><font size="4"><small>In order to add a new IO module to WRF,  several
+<p><font size="4"><small>In order to add a new IO module to WRF, ï¿½several
 files in the WRF source code must be changed. The following files need to be
 modified:<br>
 </small></font></p>
@@ -278,10 +278,10 @@ WRFV1/external/Makefile<br>
   </tbody>
 </table>
 <br>
-The exact changes depend on how WRF has been configured on the sytsem.  <br>
+The exact changes depend on how WRF has been configured on the sytsem. ï¿½<br>
 <p>Examples of the changes to the files of the WRF1.3 distribution are available at:<br>
 </p>
-<p> 
+<p>ï¿½
     
     <a href="ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/wrf-hdf5-modules">
     ftp://ftp.ncsa.uiuc.edu/HDF/pub/outgoing/wrf-hdf5-modules</a><br>
@@ -528,18 +528,18 @@ The exact changes depend on how WRF has been configured on the sytsem.  <br>
 ! RANLIB          =       ranlib<br>
 ! <br>
 ! externals : CONFIGURE_WRFIO_NF CONFIGURE_WRFIO_PHDF5 ../external/RSL/RSL/librsl.a wrfio_int<br>
-! 	( /bin/cp ../tools/gen_comms_warning ../tools/gen_comms.c ; cat ../external/RSL/gen_comms.c
+! 	( cp ../tools/gen_comms_warning ../tools/gen_comms.c ; cat ../external/RSL/gen_comms.c
 &gt;&gt; ../tools/gen_comms.c ;  \<br>
-!           /bin/cp module_dm_warning module_dm.F ; cat ../external/RSL/module_dm.F &gt;&gt; module_dm.F )<br>
+!           cp module_dm_warning module_dm.F ; cat ../external/RSL/module_dm.F &gt;&gt; module_dm.F )<br>
 ! <br>
 ! wrfio_nf : <br>
 ! 	( cd ../external/io_netcdf ; make NETCDFPATH=CONFIGURE_NETCDF_PATH FC="$(SFC)
-$(FCDEBUG) -qarch=auto -qzerosize" ; /bin/cp wrf_io_flags.h wrf_status_codes.h
+$(FCDEBUG) -qarch=auto -qzerosize" ; cp wrf_io_flags.h wrf_status_codes.h
 ../../inc )<br>
 ! <br>
 ! wrfio_phdf5 : <br>
 ! 	( cd ../external/io_phdf5 ; make PHDF5PATH=CONFIGURE_PHDF5_PATH FC="$(FC)
-$(FCDEBUG) -qarch=auto -qfree=F90 -qzerosize" ; /bin/cp wrf_io_flags.h wrf_status_codes.h
+$(FCDEBUG) -qarch=auto -qfree=F90 -qzerosize" ; cp wrf_io_flags.h wrf_status_codes.h
 ../../inc )<br>
 ! <br>
 ! wrfio_int : <br>
@@ -594,13 +594,13 @@ $(FCDEBUG) -qarch=auto -qfree=F90 -qzerosize" ; /bin/cp wrf_io_flags.h wrf_statu
   RANLIB          =       ranlib<br>
   <br>
 ! externals : CONFIGURE_WRFIO_NF ../external/RSL/RSL/librsl.a wrfio_int<br>
-  	( /bin/cp ../tools/gen_comms_warning ../tools/gen_comms.c ; cat ../external/RSL/gen_comms.c
+  	( cp ../tools/gen_comms_warning ../tools/gen_comms.c ; cat ../external/RSL/gen_comms.c
 &gt;&gt; ../tools/gen_comms.c ;  \<br>
-            /bin/cp module_dm_warning module_dm.F ; cat ../external/RSL/module_dm.F &gt;&gt; module_dm.F )<br>
+            cp module_dm_warning module_dm.F ; cat ../external/RSL/module_dm.F &gt;&gt; module_dm.F )<br>
   <br>
   wrfio_nf : <br>
   	( cd ../external/io_netcdf ; make NETCDFPATH=CONFIGURE_NETCDF_PATH FC="$(SFC)
-$(FCDEBUG) -qarch=auto -qzerosize" ; /bin/cp wrf_io_flags.h wrf_status_codes.h
+$(FCDEBUG) -qarch=auto -qzerosize" ; cp wrf_io_flags.h wrf_status_codes.h
 ../../inc )<br>
   <br>
   wrfio_int : <br>
@@ -611,18 +611,18 @@ $(FCDEBUG) -qarch=auto -qzerosize" ; /bin/cp wrf_io_flags.h wrf_status_codes.h
   RANLIB          =       ranlib<br>
   <br>
 ! externals : CONFIGURE_WRFIO_NF CONFIGURE_WRFIO_HDF5 ../external/RSL/RSL/librsl.a wrfio_int<br>
-  	( /bin/cp ../tools/gen_comms_warning ../tools/gen_comms.c ; cat ../external/RSL/gen_comms.c
+  	( cp ../tools/gen_comms_warning ../tools/gen_comms.c ; cat ../external/RSL/gen_comms.c
 &gt;&gt; ../tools/gen_comms.c ;  \<br>
-            /bin/cp module_dm_warning module_dm.F ; cat ../external/RSL/module_dm.F &gt;&gt; module_dm.F )<br>
+            cp module_dm_warning module_dm.F ; cat ../external/RSL/module_dm.F &gt;&gt; module_dm.F )<br>
   <br>
   wrfio_nf : <br>
   	( cd ../external/io_netcdf ; make NETCDFPATH=CONFIGURE_NETCDF_PATH FC="$(SFC)
-$(FCDEBUG) -qarch=auto -qzerosize" ; /bin/cp wrf_io_flags.h wrf_status_codes.h
+$(FCDEBUG) -qarch=auto -qzerosize" ; cp wrf_io_flags.h wrf_status_codes.h
 ../../inc )<br>
   <br>
 + wrfio_hdf5 : <br>
 + 	( cd ../external/io_hdf5 ; make HDF5PATH=CONFIGURE_HDF5_PATH FC="$(SFC)
-$(FCDEBUG) -qarch=auto -qfree=F90 -qzerosize" ; /bin/cp wrf_io_flags.h wrf_status_codes.h
+$(FCDEBUG) -qarch=auto -qfree=F90 -qzerosize" ; cp wrf_io_flags.h wrf_status_codes.h
 ../../inc )<br>
 + <br>
   wrfio_int : <br>
@@ -665,7 +665,7 @@ $(FCDEBUG) -qarch=auto -qfree=F90 -qzerosize" ; /bin/cp wrf_io_flags.h wrf_statu
   RANLIB          =       ranlib<br>
   <br>
 ! externals : CONFIGURE_WRFIO_NF wrfio_int<br>
-  	( /bin/cp module_dm_warning module_dm.F ; cat module_dm_stubs.F &gt;&gt; module_dm.F )<br>
+  	( cp module_dm_warning module_dm.F ; cat module_dm_stubs.F &gt;&gt; module_dm.F )<br>
   <br>
   wrfio_nf : <br>
 --- 1734,1740 ----<br>
@@ -673,20 +673,20 @@ $(FCDEBUG) -qarch=auto -qfree=F90 -qzerosize" ; /bin/cp wrf_io_flags.h wrf_statu
   RANLIB          =       ranlib<br>
   <br>
 ! externals : CONFIGURE_WRFIO_NF CONFIGURE_WRFIO_HDF5 wrfio_int<br>
-  	( /bin/cp module_dm_warning module_dm.F ; cat module_dm_stubs.F &gt;&gt; module_dm.F )<br>
+  	( cp module_dm_warning module_dm.F ; cat module_dm_stubs.F &gt;&gt; module_dm.F )<br>
   <br>
   wrfio_nf : <br>
 ***************<br>
 *** 1675,1680 ****<br>
 --- 1743,1754 ----<br>
             FFLAGS='$(FCFLAGS) -ICONFIGURE_NETCDF_PATH/include' ; \<br>
-            /bin/cp wrf_io_flags.h wrf_status_codes.h ../../inc )<br>
+            cp wrf_io_flags.h wrf_status_codes.h ../../inc )<br>
   <br>
 + wrfio_hdf5 : <br>
 + 	( cd ../external/io_hdf5 ; \<br>
 +           make HDF5PATH=CONFIGURE_HDF5_PATH FC=$(FC) TRADFLAG="-traditional" \<br>
 +           FFLAGS='$(FCFLAGS) -ICONFIGURE_HDF5_PATH/lib' ; \<br>
-+           /bin/cp wrf_io_flags.h wrf_status_codes.h ../../inc )<br>
++           cp wrf_io_flags.h wrf_status_codes.h ../../inc )<br>
 + <br>
   wrfio_int : <br>
   	( cd ../external/io_int ; \<br>
@@ -1163,8 +1163,8 @@ The 'share/module_io.F' file must be modified to recognize the HDF5 options for 
   	( cd io_int ; make clean )<br>
   <br>
   superclean : clean<br>
-  	/bin/rm -f RSL/RSL/librsl.a RSL/RSL/rsl.inc<br>
-  	/bin/rm -f io_netcdf/libwrfio_nf.a io_netcdf/diffwrf io_netcdf/*.o io_netcdf/*.f \<br>
+  	rm -f RSL/RSL/librsl.a RSL/RSL/rsl.inc<br>
+  	rm -f io_netcdf/libwrfio_nf.a io_netcdf/diffwrf io_netcdf/*.o io_netcdf/*.f \<br>
                      io_int/libwrfio_int.a io_int/diffwrf        */*.mod<br>
 ! <br>
 ! <br>
@@ -1176,11 +1176,11 @@ The 'share/module_io.F' file must be modified to recognize the HDF5 options for 
 + 	(cd io_phdf5; make clean)<br>
   <br>
   superclean : clean<br>
-  	/bin/rm -f RSL/RSL/librsl.a RSL/RSL/rsl.inc<br>
-  	/bin/rm -f io_netcdf/libwrfio_nf.a io_netcdf/diffwrf io_netcdf/*.o io_netcdf/*.f \<br>
+  	rm -f RSL/RSL/librsl.a RSL/RSL/rsl.inc<br>
+  	rm -f io_netcdf/libwrfio_nf.a io_netcdf/diffwrf io_netcdf/*.o io_netcdf/*.f \<br>
                      io_int/libwrfio_int.a io_int/diffwrf        */*.mod<br>
-! 	/bin/rm -f io_phdf5/*.a io_phdf5/*.o  *.f *.mod<br>
-! 	/bin/rm -f io_hdf5/*.a io_hdf5/*.o *.f *.mod<br>
+! 	rm -f io_phdf5/*.a io_phdf5/*.o  *.f *.mod<br>
+! 	rm -f io_hdf5/*.a io_hdf5/*.o *.f *.mod<br>
       <br>
       <br>
       </td>
@@ -1192,11 +1192,11 @@ The 'share/module_io.F' file must be modified to recognize the HDF5 options for 
     <p><b><small>
     <font size="4"><small></small></font></small></b><br>
 </p>
-<p><i>Last Modified: 17 May 2004 </i></p>
+<p><i>Last Modified: 17 May 2004ï¿½</i></p>
 <blockquote>
   <blockquote>
     
-    <p> </p>
+    <p>ï¿½</p>
   </blockquote>
 
 </blockquote>

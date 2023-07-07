@@ -157,7 +157,7 @@ main( int argc, char *argv[], char *env[] )
       sprintf( fname_wrk,"%s/Registry_irr_diag",dir ) ;
     }
 //  fprintf(stderr,"Registry tmp file = %s\n",fname_wrk);
-    sprintf(command,"/bin/cp %s %s\n",fname_in,fname_wrk);
+    sprintf(command,"cp %s %s\n",fname_in,fname_wrk);
 //  fprintf(stderr,"Command = %s\n",command);
     if( system( command ) ) {
       fprintf(stderr,"Could not copy %s to %s\n",fname_in,fname_wrk);
@@ -169,7 +169,7 @@ main( int argc, char *argv[], char *env[] )
       exit(2) ;
     }
     if( !access( "Registry/registry.irr_diag",F_OK ) ) {
-      sprintf(command,"/bin/rm -f Registry/registry.irr_diag\n");
+      sprintf(command,"rm -f Registry/registry.irr_diag\n");
       if( system( command ) ) {
         fprintf(stderr,"Could not remove Registry/registry.irr_diag\n");
         exit(2) ;
@@ -279,10 +279,10 @@ cleanup:
    sprintf(command,"del /F /Q %s\n",fname_tmp );
 #else
    if( do_irr_diag ) {
-     sprintf(command,"/bin/rm -f %s\n",fname_wrk );
+     sprintf(command,"rm -f %s\n",fname_wrk );
      system( command ) ;
    }
-   sprintf(command,"/bin/rm -f %s\n",fname_tmp );
+   sprintf(command,"rm -f %s\n",fname_tmp );
 #endif
    return system( command ) ;
 }

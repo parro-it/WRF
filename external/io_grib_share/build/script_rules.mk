@@ -174,7 +174,7 @@ clean_lib:
 
 clean: 
 	@echo "    Cleaning up script directory `pwd`" ;\
-	/bin/rm -f Makefile.bak core *~ #*#
+	rm -f Makefile.bak core *~ #*#
 
 #
 #  Rules for making dependencies.

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # parse argument list
 
@@ -582,11 +582,11 @@ if test -n "$PERL" ; then
      fi
      if [ "$opt_level" = "-d" ] ; then
         sed -e 's/FCOPTIM[	 ]*=/& # /' -e '/FCDEBUG[	 ]*=/s/#//' configure.wrf > configure.wrf.edit
-        /bin/mv configure.wrf.edit configure.wrf
+        mv configure.wrf.edit configure.wrf
      fi
      if [ "$opt_level" = "-D" ] ; then
         sed -e 's/FCOPTIM[	 ]*=/& # /' -e '/FCDEBUG[	 ]*=/s/#//g' configure.wrf > configure.wrf.edit
-        /bin/mv configure.wrf.edit configure.wrf
+        mv configure.wrf.edit configure.wrf
      fi
 
      # GNU has a funny way of doing promotion to real*8
@@ -598,9 +598,9 @@ if test -n "$PERL" ; then
        else
          sed -e '/^RWORDSIZE/s/$(NATIVE_RWORDSIZE)/8/' configure.wrf > configure.wrf.edit
        fi
-       /bin/mv configure.wrf.edit configure.wrf
+       mv configure.wrf.edit configure.wrf
        sed -e 's/-DBUILD_SBM_FAST=1/-DBUILD_SBM_FAST=0/' configure.wrf > configure.wrf.edit
-       /bin/mv configure.wrf.edit configure.wrf
+       mv configure.wrf.edit configure.wrf
      fi
    else
      echo '*********************************************************'
@@ -615,25 +615,25 @@ fi
 if test -f configure.wrf ; then
 # new dec 2005.  test what fseek is supported (needed for share/landread.c to work correctly)
   echo testing for fseeko and fseeko64
-  /bin/rm -f tools/fseeko_test tools/fseeko64_test
+  rm -f tools/fseeko_test tools/fseeko64_test
   ( make fseek_test 2> /dev/null ) 1> /dev/null
   if [ "$os" = "Darwin" ] ; then
     # fseeko64 does not exist under Darwin fseeko does. Remove the 0 length executable
     # file that might get generated anyway, even though the compiler complains about missing reference.
-    /bin/rm -f tools/fseeko64_test 
+    rm -f tools/fseeko64_test 
   fi
   if test -x tools/fseeko64_test ; then
     ( tools/fseeko64_test 2> /dev/null ) 1> /dev/null
     if [ $? = 0 ] ; then
        echo fseeko64 is supported
-       sed '/^CC .*=/s/$/ -DFSEEKO64_OK /' configure.wrf > xx$$ ; /bin/mv xx$$ configure.wrf
+       sed '/^CC .*=/s/$/ -DFSEEKO64_OK /' configure.wrf > xx$$ ; mv xx$$ configure.wrf
     fi
   else
     if test -x tools/fseeko_test ; then
       ( tools/fseeko_test 2> /dev/null ) 1> /dev/null
       if [ $? = 0 ] ; then
         echo fseeko is supported and handles 64 bit offsets
-        sed '/^CC .*=/s/$/ -DFSEEKO_OK /' configure.wrf > xx$$ ; /bin/mv xx$$ configure.wrf
+        sed '/^CC .*=/s/$/ -DFSEEKO_OK /' configure.wrf > xx$$ ; mv xx$$ configure.wrf
       else
         echo neither fseeko64 nor fseeko with 64 bit offsets works, landread will be compiled with fseek
         echo but may not work correctly for very high resolution terrain datasets
@@ -676,7 +676,7 @@ if [ "$wrf_core" = "DA_CORE" -o "$wrf_core" = "WRF_PLUS_CORE" -o "$wrf_core" = "
   if [ "`grep '^SFC' configure.wrf | grep -i 'gfortran'`" != "" -o "`grep '^SFC' configure.wrf | grep -i 'frtpx'`" != "" ]; then
     echo "WRFDA/WRFPLUS using gfortran/frtpx needs realsize=8"
     sed -e '/^PROMOTION.*=/s/#//' configure.wrf > configure.wrf.edit
-    /bin/mv configure.wrf.edit configure.wrf
+    mv configure.wrf.edit configure.wrf
   fi
 fi
 
@@ -685,7 +685,7 @@ if [ -n "$WRFPLUS" ] ; then
     if [ `grep '^SFC' configure.wrf | cut -d= -f2` = "gfortran" ]; then
       echo "WRFPLUS using gfortran needs realsize=8"
       sed -e '/^PROMOTION.*=/s/#//' configure.wrf > configure.wrf.edit
-      /bin/mv configure.wrf.edit configure.wrf
+      mv configure.wrf.edit configure.wrf
     fi
   fi
 fi

@@ -47,7 +47,7 @@ set m_dirs = ( mechanisms/* )
 foreach mdir ( $m_dirs )
 echo $mdir >>& if_required
 
-( cd $mdir; /bin/rm -f *.f90 *.map Makefil* *~ core.* ) >>& if_required
+( cd $mdir; rm -f *.f90 *.map Makefil* *~ core.* ) >>& if_required
 
 end
 

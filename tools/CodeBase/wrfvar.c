@@ -440,7 +440,7 @@ while ( <ROUT> )
       print "  ",uc $vname," is dummy argument $argn of $rout ($sourcefile)\n"  ;
       $found_var = 1 ;
       close ROUT ;
-      system( "sort -u $dbdir/calls > /tmp/wrfvar-sort ; /bin/mv /tmp/wrfvar-sort $dbdir/calls" ) ;
+      system( "sort -u $dbdir/calls > /tmp/wrfvar-sort ; mv /tmp/wrfvar-sort $dbdir/calls" ) ;
       open CALLERS, "< $dbdir/calls" ;
       $rout2 = $rout ;
       while ( <CALLERS> ) {

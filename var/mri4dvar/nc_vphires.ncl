@@ -19,7 +19,7 @@ begin
 
    vv = fbinrecread(filename,1,(/5,nk,nj,ni/),"double")
 
-   system("/bin/rm -f "+filename+".nc")   ; remove any pre-existing file
+   system("rm -f "+filename+".nc")   ; remove any pre-existing file
    ncdf = addfile(filename+".nc" ,"c")  ; open output netCDF file
 
     ;===================================================================

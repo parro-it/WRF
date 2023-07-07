@@ -145,8 +145,8 @@ exe:
 #      object files.
 #
 thisdir_clean: thisdir_clean_lib
-	@/bin/rm -f *.o *.obj *.mod *.f90 core so_locations Makefile.bak *~ #*#
-	@/bin/rm -fr ii_files
+	@rm -f *.o *.obj *.mod *.f90 core so_locations Makefile.bak *~ #*#
+	@rm -fr ii_files
 	@if [ -d utest ] ; then \
 		cd utest; \
 		make clean; \
@@ -154,7 +154,7 @@ thisdir_clean: thisdir_clean_lib
 	fi 
 
 thisdir_clean_lib: 
-	@/bin/rm -f $(LIB_DEST)/lib$(LIB_NAME).*	
+	@rm -f $(LIB_DEST)/lib$(LIB_NAME).*	
 
 #
 #  RULES for creating the include dependencies.

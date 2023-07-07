@@ -1921,7 +1921,7 @@ if ( $ARCH[1] == AIX ) then
 		set CUR_DIR = ${LOADL_STEP_INITDIR}
 	endif
 	if ( ! -d $TMPDIR ) mkdir $TMPDIR
-	set MAIL                = /usr/bin/mailx
+	set MAIL                = mailx
 	set COMPOPTS    = ( 1 2 3 )
 	set COMPOPTS_NO_NEST = 0
 	set COMPOPTS_NEST_STATIC = 1
@@ -1968,7 +1968,7 @@ else if ( $ARCH[1] == Darwin ) then
 		exit ( 2 ) 
 	endif
 	set TMPDIR              = .
-	set MAIL		= /usr/bin/mailx
+	set MAIL		= mailx
 	if      ( $LINUX_COMP == PGI ) then
 		set COMPOPTS	= (  1 2  3 )
 		set ZAP_OPENMP	= FALSE
@@ -2011,7 +2011,7 @@ EOF
 else if ( $ARCH[1] == OSF1 && $clrm == 1 ) then
 	set DEF_DIR		= /`hostname | cut -d. -f1`/$user
 	set TMPDIR		= /mmmtmp/$user
-	set MAIL		= /usr/bin/mailx
+	set MAIL		= mailx
 	if      ( ( $NESTED == TRUE ) && ( $RSL_LITE != TRUE ) ) then
 		set COMPOPTS	= ( 2 4 6 )
 	else if ( ( $NESTED != TRUE ) && ( $RSL_LITE != TRUE ) ) then
@@ -2042,7 +2042,7 @@ else if ( ( $ARCH[1] == Linux ) && ( `hostname` == bay-mmm ) ) then
 	set DEF_DIR	= /data3/mp/${user}/`hostname`
 	if ( ! -d $DEF_DIR ) mkdir $DEF_DIR
 	set TMPDIR		= .
-	set MAIL		= /bin/mail
+	set MAIL		= mail
 	if      ( $LINUX_COMP == PGI ) then
 		if      ( ( $NESTED == TRUE ) && ( $RSL_LITE != TRUE ) ) then
 			set COMPOPTS	= ( 2 4 5 )
@@ -2092,7 +2092,7 @@ else if ( ( $ARCH[1] == Linux ) && ( `hostname | cut -c 1-2` ==  ln ) ) then
 	set DEF_DIR	= /ptmp/${user}/wrf_regtest
 	if ( ! -d $DEF_DIR ) mkdir $DEF_DIR
 	set TMPDIR		= .
-	set MAIL		= /bin/mail
+	set MAIL		= mail
 	if      ( $LINUX_COMP == PGI ) then
 		if      ( ( $NESTED == TRUE ) && ( $RSL_LITE != TRUE ) ) then
 			set COMPOPTS    = ( 4 2 3 )
@@ -2132,7 +2132,7 @@ else if ( ( $ARCH[1] == Linux ) && ( `hostname` == basswood ) ) then
 		mkdir -p $DEF_DIR
 		echo "See directory ${DEF_DIR}/ for wrftest.output and other test results"
 	endif
-	set MAIL		= /bin/mail
+	set MAIL		= mail
 	set COMPOPTS_NO_NEST = 0
 	set COMPOPTS_NEST_STATIC = 1
 	set COMPOPTS_NEST_PRESCRIBED = 2
@@ -2190,7 +2190,7 @@ else if ( `hostname` == tempest ) then
 else if ( ( $ARCH[1] == Linux ) && ( `hostname` == master ) ) then
 	set DEF_DIR		= /big6/gill/DO_NOT_REMOVE_DIR
 	set TMPDIR		= .
-	set MAIL		= /bin/mail
+	set MAIL		= mail
 	if      ( $LINUX_COMP == PGI ) then
 		if        ( $NESTED == TRUE )                            then
 			set COMPOPTS	= ( 2 4 5 )
@@ -2266,9 +2266,9 @@ cd $DEF_DIR
 
 if ( -d regression_test ) then
 	if ( -d regression_test.old ) then
-		/bin/rm -fr regression_test.old
+		rm -fr regression_test.old
 	endif
-	/bin/mv regression_test regression_test.old
+	mv regression_test regression_test.old
 endif
 
 #	Go to the regression test directory
@@ -2336,7 +2336,7 @@ else
 	endif
 	if ( ! -d $TMPDIR/RUN ) then
 		mkdir $TMPDIR/RUN
-		/bin/rm -fr $TMPDIR/RUN/*
+		rm -fr $TMPDIR/RUN/*
 	endif
 	if ( -d $TMPDIR/RUN ) then
 		tar cf - ./WRFV3/test ./WRFV3/main | ( cd $TMPDIR/RUN ; tar xvf - )
@@ -2612,7 +2612,7 @@ cp configure.wrf configure.wrf.core=${core}_build=${compopt}
 		#	as the default floating precision.
 
 		if ( $REAL8 == TRUE ) then
-			sed -e '/^RWORDSIZE/s/\$(NATIVE_RWORDSIZE)/8/'  configure.wrf > ! foo ; /bin/mv foo configure.wrf
+			sed -e '/^RWORDSIZE/s/\$(NATIVE_RWORDSIZE)/8/'  configure.wrf > ! foo ; mv foo configure.wrf
 		endif
 	
 		#	For AIX, remove the MASSV libs for bit-wise comparisons.
@@ -2620,19 +2620,19 @@ cp configure.wrf configure.wrf.core=${core}_build=${compopt}
 		if ( ( `uname` == AIX ) && ( $REG_TYPE == BIT4BIT ) ) then
 			sed -e '/^LDFLAGS_LOCAL/s/-lmass -lmassv/ /'  \
 			    -e '/^ARCH_LOCAL/s/-DNATIVE_MASSV/ /' \
-			    configure.wrf > ! foo ; /bin/mv foo configure.wrf
+			    configure.wrf > ! foo ; mv foo configure.wrf
 		endif
 	
 		#	Fix the OpenMP default for IBM regression testing - noopt required for bit-wise comparison.
 
 # this should not be needed any more, with changes to have only OMP modules compiled with -qsmp=noauto.  JM 20090217
 #		if ( ( $compopt == $COMPOPTS[2] ) && ( `uname` == AIX ) ) then
-#			sed -e '/^OMP/s/-qsmp=noauto/-qsmp=noauto:noopt/'  configure.wrf > ! foo ; /bin/mv foo configure.wrf
+#			sed -e '/^OMP/s/-qsmp=noauto/-qsmp=noauto:noopt/'  configure.wrf > ! foo ; mv foo configure.wrf
 #		endif
 
 		#	A special flag to insure the same results from a random number used in the SAS CU scheme.
 
-		sed -e '/^ARCH_LOCAL/s/=/=	-DREGTEST /' configure.wrf > ! foo ; /bin/mv foo configure.wrf
+		sed -e '/^ARCH_LOCAL/s/=/=	-DREGTEST /' configure.wrf > ! foo ; mv foo configure.wrf
 
 		#	Save the configure file.
 
@@ -2862,7 +2862,7 @@ EOF
 					endif
 				endif
 
-				/bin/cp namelist.input $TMPDIR/namelist.input.$core.${phys_option}.$compopt
+				cp namelist.input $TMPDIR/namelist.input.$core.${phys_option}.$compopt
 #DAVE###################################################
 echo built namelist $TMPDIR/namelist.input.$core.${phys_option}.$compopt
 cat  $TMPDIR/namelist.input.$core.${phys_option}.$compopt
@@ -3389,7 +3389,7 @@ banner 25
 					endif
 				endif
 
-				/bin/cp namelist.input $TMPDIR/namelist.input.$core.${phys_option}.$compopt
+				cp namelist.input $TMPDIR/namelist.input.$core.${phys_option}.$compopt
 #DAVE###################################################
 echo built namelist 
 ls -ls namelist.input

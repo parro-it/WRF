@@ -60,8 +60,8 @@ lib:
 #      auxilliary files created during compilation.
 #
 clean: 
-	@/bin/rm -f *.o core so_locations Makefile.bak *~ #*#
-	@/bin/rm -fr ii_files
+	@rm -f *.o core so_locations Makefile.bak *~ #*#
+	@rm -fr ii_files
 	@for o in $(MAIN_OBJS); do \
             p=`basename $$o '.o'` ; \
 	    rm -f $$p;\

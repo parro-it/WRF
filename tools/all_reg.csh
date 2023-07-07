@@ -340,7 +340,7 @@ FOUND_SELECTED_TEST:
 			#	Either zap existing stuff (GENERATE), or make sure it is there (COMPARE)
 
 			if        ( $BASELINE == GENERATE ) then
-				/bin/rm -rf $SAVE_DIR
+				rm -rf $SAVE_DIR
 			else if ( ( $BASELINE == COMPARE  )  && ( $tests[$count_test] != Full_Optimization ) ) then
 				if ( ! -d $SAVE_DIR ) then
 					echo $SAVE_DIR does not exist for BASELINE comparison, stopping

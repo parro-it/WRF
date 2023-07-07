@@ -25,7 +25,7 @@ if ( ! -x tools/deftab || ! -x tools/nocontf90 || ! -x tools/subinfo_calls || ! 
   endif
 endif
 
-/bin/rm -fr $db
+rm -fr $db
 mkdir $db
 
 if ( ! -f frame/module_state_description.f ) then
@@ -54,7 +54,7 @@ foreach d ( $dirs )
                -e 's/^logical,/logical ,/' \
                > $db/lm_${f:t}_1
     tools/deftab $f < $db/lm_${f:t}_1
-    /bin/rm -f $db/lm_${f:t}_1
+    rm -f $db/lm_${f:t}_1
   end
 end
 
@@ -65,35 +65,35 @@ sort -n +0 -1 xxx | awk '{print $2 " " $3 " " $4}'  > $db/calls
 
 skippy:
 
-foreach f ( `/bin/ls -1 $db | grep -v '\.html' | grep -v calls | grep -v '^lm_' | grep -v '^vv_' | grep -v '_descrip$'` )
+foreach f ( `ls -1 $db | grep -v '\.html' | grep -v calls | grep -v '^lm_' | grep -v '^vv_' | grep -v '_descrip$'` )
   echo creating html file for $f
   tools/subinfo $f $gofast > $db/$f.html
 end
 
-#foreach f ( `/bin/ls -1 $db/[a-f]* | grep -v '\.html' | grep -v calls | grep -v '^lm_'` )
+#foreach f ( `ls -1 $db/[a-f]* | grep -v '\.html' | grep -v calls | grep -v '^lm_'` )
 #  echo creating html file for $f
 #  tools/subinfo $f:t > $f.html
 #end
-#foreach f ( `/bin/ls -1 $db/[g-m]* | grep -v '\.html' | grep -v calls | grep -v '^lm_'` )
+#foreach f ( `ls -1 $db/[g-m]* | grep -v '\.html' | grep -v calls | grep -v '^lm_'` )
 #  echo creating html file for $f
 #  tools/subinfo $f:t > $f.html
 #end
-#foreach f ( `/bin/ls -1 $db/[n-t]* | grep -v '\.html' | grep -v calls | grep -v '^lm_'` )
+#foreach f ( `ls -1 $db/[n-t]* | grep -v '\.html' | grep -v calls | grep -v '^lm_'` )
 #  echo creating html file for $f
 #  tools/subinfo $f:t > $f.html
 #end
-#foreach f ( `/bin/ls -1 $db/[u-z]* | grep -v '\.html' | grep -v calls | grep -v '^lm_'` )
+#foreach f ( `ls -1 $db/[u-z]* | grep -v '\.html' | grep -v calls | grep -v '^lm_'` )
 #  echo creating html file for $f
 #  tools/subinfo $f:t > $f.html
 #end
 
 echo "Creating $db/index.html"
 
-/bin/cp tools/callgraph.page1      $db/callgraph.html
+cp tools/callgraph.page1      $db/callgraph.html
 tools/callgraph wrf 7           >> $db/callgraph.html
 cat      tools/callgraph.page2  >> $db/callgraph.html
-/bin/cp tools/index.page           $db/index.html
-/bin/cp tools/collapsd.gif tools/daughter.gif tools/exploded.gif $db 
+cp tools/index.page           $db/index.html
+cp tools/collapsd.gif tools/daughter.gif tools/exploded.gif $db 
 
 sk1:
 #tools/callgraph wrf 0                 > $db/index.html

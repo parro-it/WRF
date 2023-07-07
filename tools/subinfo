@@ -37,7 +37,7 @@ $routfile = $dbdir."/".$rout ;
 
 if ( ! ( open( ROUT, "< $routfile" )) ) {
   print "$rout is not a known subprogram. \n" ;
-  open P, "/bin/ls -1 $dbdir/\*$rout\* | " ;
+  open P, "ls -1 $dbdir/\*$rout\* | " ;
   print "Perhaps you mean:\n" ;
   while (<P>) {
     s/.*\/// ;
@@ -49,7 +49,7 @@ if ( ! ( open( ROUT, "< $routfile" )) ) {
 }
 
 #open ROUT, "< $routfile" or { print "$rout is not a known subprogram. Perhaps you mean:\n" ; }
-#  system( "/bin/ls -1 $dbdir/\*$rout\*" ) ;
+#  system( "ls -1 $dbdir/\*$rout\*" ) ;
 #  die ;
 
 while ( <ROUT> ) {
@@ -118,7 +118,7 @@ while ( <ROUT> ) {
       $first = 0 ;
     }
     printf("  %-30s    ",uc $t[1] ) ;
-    open P,"/bin/ls */*.F | grep -w $t[1] |" ;
+    open P,"ls */*.F | grep -w $t[1] |" ;
     while( <P> ) {
       chop ;
 #      printf("(<a href=\"../../%s\">%s</a>)\n", $_, $_ ) ;

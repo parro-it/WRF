@@ -20,7 +20,7 @@ AR      = ar
 all : libwrfio_adios2.a 
 
 libwrfio_adios2.a:		$(OBJS) $(CODE)
-			/bin/rm -f libwrfio_adios2.a
+			rm -f libwrfio_adios2.a
 			$(AR) cr libwrfio_adios2.a $(OBJSL)
 			$(RANLIB) libwrfio_adios2.a
 
@@ -33,4 +33,4 @@ field_routines.o:	field_routines.F90 wrf_io.o
 			$(FC) $(FFLAGS) -c field_routines.f
 
 superclean:
-			@/bin/rm -f *.f *.o *.mod *.smod libwrfio_adios2.a
+			@rm -f *.f *.o *.mod *.smod libwrfio_adios2.a

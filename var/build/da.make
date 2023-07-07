@@ -277,7 +277,7 @@ module_state_description.F : ../../Registry/$(REGISTRY)
 
 md_calls.inc : md_calls.m4
 	if [ "$(M4)" = NA ] ; then \
-	  /bin/cp $(WRF_SRC_ROOT_DIR)/arch/md_calls.inc . ; \
+	  cp $(WRF_SRC_ROOT_DIR)/arch/md_calls.inc . ; \
 	else \
 	  $(M4) md_calls.m4 > md_calls.inc ; \
 	fi

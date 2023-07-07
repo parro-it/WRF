@@ -49,7 +49,7 @@ if ( ismissing(ffile) ) then
 end if
 
 ; create forcing file
-ierr = systemfunc("/bin/rm -f "+outFName)
+ierr = systemfunc("rm -f "+outFName)
 ierr = systemfunc("ncgen -o "+outFName+" "+cdlFName)
 
 ; open output file 

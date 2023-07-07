@@ -1,6 +1,6 @@
 #!/bin/csh
 
-/bin/rm -f good.* bad.*
+rm -f good.* bad.*
 
 foreach choyce ( 1 2 3 4 )
   unset subopt

@@ -35,7 +35,7 @@ AR      = ar
 all : libwrfio_pio.a 
 
 libwrfio_pio.a:		$(OBJS) $(CODE)
-			/bin/rm -f libwrfio_pio.a
+			rm -f libwrfio_pio.a
 			$(AR) cr libwrfio_pio.a $(OBJS)
 			$(RANLIB) libwrfio_pio.a
 
@@ -66,5 +66,5 @@ read_bdy_routines.o:	read_bdy_routines.F90 wrf_data_pio.o pio_routines.o
 clean:	superclean
 
 superclean:
-			@/bin/rm -f *.f *.o \
+			@rm -f *.f *.o \
 			*.mod libwrfio_pio.a

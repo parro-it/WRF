@@ -8,7 +8,7 @@ endif
 
 tools/safe >& /dev/null
 foreach f ( */Makefile )
-  /bin/mv $f $f.saved
+  mv $f $f.saved
   cat $f.saved | sed '/ DEPENDENCIES/,$d'  > $f
 end
 

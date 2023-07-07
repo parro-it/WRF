@@ -20,7 +20,7 @@ AR      = ar
 all : libwrfio_pnf.a 
 
 libwrfio_pnf.a:		$(OBJS) $(CODE)
-			/bin/rm -f libwrfio_pnf.a
+			rm -f libwrfio_pnf.a
 			$(AR) cr libwrfio_pnf.a $(OBJSL)
 			$(RANLIB) libwrfio_pnf.a
 
@@ -37,5 +37,5 @@ field_routines.o:	field_routines.F90 wrf_io.o
 			$(FC) $(FFLAGS) -c field_routines.f
 
 superclean:
-			@/bin/rm -f *.f *.o testWRFWrite testWRFRead \
+			@rm -f *.f *.o testWRFWrite testWRFRead \
 			*.mod libwrfio_pnf.a

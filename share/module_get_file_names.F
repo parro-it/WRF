@@ -142,12 +142,12 @@ print *,TRIM(eligible_file_name(loop))
          !   We clean up our own messes.
 
 #ifdef NONSTANDARD_SYSTEM_SUBR
-         CALL SYSTEM ( '/bin/rm -f .foo'  )
-         CALL SYSTEM ( '/bin/rm -f .foo1' )
+         CALL SYSTEM ( 'rm -f .foo'  )
+         CALL SYSTEM ( 'rm -f .foo1' )
 #endif
 #ifdef NONSTANDARD_SYSTEM_FUNC
-         ierr = SYSTEM ( '/bin/rm -f .foo'  )
-         ierr = SYSTEM ( '/bin/rm -f .foo1' )
+         ierr = SYSTEM ( 'rm -f .foo'  )
+         ierr = SYSTEM ( 'rm -f .foo1' )
 #endif
 
       ENDIF monitor_only_code2

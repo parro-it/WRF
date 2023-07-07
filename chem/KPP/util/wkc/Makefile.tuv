@@ -12,4 +12,4 @@ tuv_kpp : $(OBJ)
 	$(SCC) -c $(DEBUG) $<
 
 clean:
-	/bin/rm -f $(OBJ)
+	rm -f $(OBJ)

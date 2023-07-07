@@ -3,7 +3,7 @@
 # Bare bones little script that compiles every architecture on a machine
 # JM, 2004 10 13
 
-/bin/rm -f testomatic.log
+rm -f testomatic.log
 
 # First find out how many we got on this box.
 

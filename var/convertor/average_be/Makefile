@@ -1,7 +1,7 @@
 .SUFFIXES: .F .o
 
 FC = xlf90
-CPP = /usr/local/bin/cpp -P -traditional
+CPP = /usr/localcpp -P -traditional
 FCFLAGS = -qfree=f90 -qrealsize=8 -qcheck -g
 LDFLAGS = -g -qcheck
 

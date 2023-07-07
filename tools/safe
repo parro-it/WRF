@@ -7,6 +7,6 @@ if ( ! -d  tools ) then
 endif
 
 foreach f ( */Makefile.saved )
-  /bin/mv $f $f:r
+  mv $f $f:r
 end
 

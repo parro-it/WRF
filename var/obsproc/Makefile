@@ -8,7 +8,7 @@ AR	=	ar ru
 CD	=	cd
 LN	=	ln -s
 MAKE	=	make -f Makefile $(J) 
-RM	=	/bin/rm -f
+RM	=	rm -f
 RM_LIST	=	*.o *.M core i.* *.kmo *.mod fort.* *.out namelist.* *~ */*~ *.exe
 BUFR	=	$(BUFR_CPP)
 

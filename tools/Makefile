@@ -21,10 +21,10 @@ standard.exe : standard.o
 	$(CC_TOOLS) $(CFLAGS) -c $(DEBUG) $<
 
 clean:
-	/bin/rm -f $(OBJ) gen_comms.c standard.o
+	rm -f $(OBJ) gen_comms.c standard.o
 
 gen_comms.c : gen_comms.stub
-	/bin/cp gen_comms.stub gen_comms.c
+	cp gen_comms.stub gen_comms.c
 
 # regenerate this list with "makedepend -Y *.c"
 

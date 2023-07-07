@@ -169,7 +169,7 @@ module_io_quilt.o : module_io_quilt.F module_io_quilt_old.F
 
 md_calls.inc : md_calls.m4
 	if [ "$(M4)" = NA ] ; then \
-	  /bin/cp ../arch/md_calls.inc . ; \
+	  cp ../arch/md_calls.inc . ; \
 	else \
 	  $(M4) md_calls.m4 > md_calls.inc ; \
 	fi

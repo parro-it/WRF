@@ -15,7 +15,7 @@ AR      = ar
 all : libwrfio_nf.a 
 
 libwrfio_nf.a:         $(OBJS) $(CODE)
-			/bin/rm -f $@
+			rm -f $@
 			if [ "$(AR)" != "lib.exe" ] ; then \
                           $(AR) cr libwrfio_nf.a $(OBJSL) ; \
                         else \
@@ -66,5 +66,5 @@ field_routines.o:	field_routines.F90 wrf_io.o
 			$(FC) -o $@ $(FFLAGS) -c field_routines.f
 
 superclean:
-			@/bin/rm -f *.f *.o *.obj *.i testWRFWrite testWRFRead \
+			@rm -f *.f *.o *.obj *.i testWRFWrite testWRFRead \
 			*.mod libwrfio_nf.a diffwrf

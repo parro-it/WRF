@@ -23,10 +23,10 @@ registry : $(OBJ)
 	$(SCC) -I../../../../inc $(CFLAGS) -c $(DEBUG) $<
 
 clean:
-	@/bin/rm -f $(OBJ) gen_comms.c
+	@rm -f $(OBJ) gen_comms.c
 
 gen_comms.c : gen_comms.stub
-	/bin/cp gen_comms.stub gen_comms.c
+	cp gen_comms.stub gen_comms.c
 
 # regenerate this list with "makedepend -Y *.c"
 

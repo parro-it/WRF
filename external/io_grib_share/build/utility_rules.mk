@@ -57,11 +57,11 @@ lib:
 #  'clean_exe' removes the utility program.
 #
 clean: 
-	@/bin/rm -f *.o core* so_locations Makefile.bak *~ #*#
-	@/bin/rm -fr ii_files
+	@rm -f *.o core* so_locations Makefile.bak *~ #*#
+	@rm -fr ii_files
 
 clean_exe:
-	@/bin/rm -f $(BIN_DEST)/$(EXE_NAME)
+	@rm -f $(BIN_DEST)/$(EXE_NAME)
 
 clean_lib:
 	@echo "       make clean_lib does nothing for utility modules"

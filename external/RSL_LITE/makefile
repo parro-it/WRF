@@ -15,7 +15,7 @@ FFLAGS =
 all : librsl_lite.a
 
 librsl_lite.a:          $(OBJS)
-			/bin/rm -f librsl_lite.a
+			rm -f librsl_lite.a
 			$(AR) cr librsl_lite.a $(OBJSL)
 
 c_code.o:	        c_code.c
@@ -51,7 +51,7 @@ f_xpose.o:	        f_xpose.F90 f_pack.o
 			$(FC) -o $@ $(FFLAGS) -c f_xpose.f
 
 clean : 
-			@/bin/rm -f *.f *.o *.mod *.obj *.i
+			@rm -f *.f *.o *.mod *.obj *.i
 
 superclean : clean
-			@/bin/rm -f *.a
+			@rm -f *.a

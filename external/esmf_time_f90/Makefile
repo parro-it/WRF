@@ -11,7 +11,7 @@
 #           a single quote.
 SED_FTN = sed -e "/\!.*'/s/'//g"
 
-RM = /bin/rm -f
+RM = rm -f
 AR = ar
 #RANLIB	= ranlib
 RANLIB	= echo

@@ -9,9 +9,9 @@
 
 /* defines of system commands */
 #define UNIQSORT "/bin/sort -u"
-#define CATCOMM  "/bin/cat"
-#define RMCOMM   "/bin/rm"
-#define MVCOMM   "/bin/mv"
+#define CATCOMM  "cat"
+#define RMCOMM   "rm"
+#define MVCOMM   "mv"
 
 #define DRIVER_LAYER     100
 #define MEDIATION_LAYER  200

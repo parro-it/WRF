@@ -6,9 +6,9 @@ set nonomatch
 foreach dir ( frame chem share dyn_em phys cmaq main tools wrftladj )
   if ( -d $dir ) then
      if ( $dir == cmaq ) then
-        ( cd $dir ; echo $dir ; /bin/rm -f *.o *.mod ) >& /dev/null
+        ( cd $dir ; echo $dir ; rm -f *.o *.mod ) >& /dev/null
      else
-        ( cd $dir ; echo $dir ; /bin/rm -f core wrf *.f90 *.exe *.kmo *.mod *.o *.obj *.inc *.F90 *.a \
+        ( cd $dir ; echo $dir ; rm -f core wrf *.f90 *.exe *.kmo *.mod *.o *.obj *.inc *.F90 *.a \
                       db_* Warnings module_state_description.F module_dm.F gmeta \
                       wrfdata whatiread rsl.* show_domain* ) >& /dev/null
      endif
@@ -21,7 +21,7 @@ endif
 
 ( cd tools/CodeBase ; make clean )
 
-( cd inc ; /bin/rm -f *.inc namelist.default commit_decl )
+( cd inc ; rm -f *.inc namelist.default commit_decl )
 
 find . -name \*.dSYM -exec rm -rf {} \; >& /dev/null
 
@@ -32,29 +32,29 @@ if ( "$arg" == '-a' || "$arg" == '-aa' ) then
     ( cd var/obsproc ; make clean )
   endif
   if ( -f Registry/Registry ) then
-    /bin/cp Registry/Registry Registry/Registry.backup
-    /bin/rm -f Registry/Registry
-    /bin/rm -f Registry/io_boilerplate_temporary.inc
+    cp Registry/Registry Registry/Registry.backup
+    rm -f Registry/Registry
+    rm -f Registry/io_boilerplate_temporary.inc
     if ( -f Registry/Registry.rconfig ) then
-      /bin/rm -f Registry/Registry.rconfig
+      rm -f Registry/Registry.rconfig
     endif
   endif
-  /bin/rm -fr ./netcdf_links
-  /bin/rm -fr tools/code_dbase
+  rm -fr ./netcdf_links
+  rm -fr tools/code_dbase
   ( cd external ; make -i superclean )
   ( cd external/io_grib1/WGRIB ; make clean )
   ( cd external/atm_ocn ; make clean )
-  ( cd tools ; /bin/rm -f registry gen_comms.c fseeko_test fseeko64_test nc4_test.log ) >& /dev/null
-  ( cd inc; /bin/rm -f dm_comm_cpp_flags wrf_io_flags.h wrf_status_codes.h ) >& /dev/null
+  ( cd tools ; rm -f registry gen_comms.c fseeko_test fseeko64_test nc4_test.log ) >& /dev/null
+  ( cd inc; rm -f dm_comm_cpp_flags wrf_io_flags.h wrf_status_codes.h ) >& /dev/null
   if ( -f configure.wrf ) then
-    /bin/cp configure.wrf configure.wrf.backup
-    /bin/rm -f configure.wrf >& /dev/null
+    cp configure.wrf configure.wrf.backup
+    rm -f configure.wrf >& /dev/null
   endif
   if ( "$arg" != '-aa' ) then
-    ( cd run ; /bin/rm -f gm* out* fort* ideal* *.exe input_sounding p3_lookupTable_1.dat-3momI_v5.1.6 ; \
-	  /bin/cp -f namelist.input namelist.input.backup.`date +%Y-%m-%d_%H_%M_%S` ; \
-	  /bin/rm -f namelist.input ) >& /dev/null
-    ( cd test/exp_real ; /bin/rm -f gm* out* fort* real* ) >& /dev/null
+    ( cd run ; rm -f gm* out* fort* ideal* *.exe input_sounding p3_lookupTable_1.dat-3momI_v5.1.6 ; \
+	  cp -f namelist.input namelist.input.backup.`date +%Y-%m-%d_%H_%M_%S` ; \
+	  rm -f namelist.input ) >& /dev/null
+    ( cd test/exp_real ; rm -f gm* out* fort* real* ) >& /dev/null
     ( cd test ; rm -f */*.exe */ETAMPNEW_DATA* */GENPARM.TBL */LANDUSE.TBL */README.namelist */README.physics_files \
 	  */RRTM_DATA */SOILPARM.TBL */VEGPARM.TBL */MPTABLE.TBL */URBPARM.TBL */URBPARM_LCZ.TBL */grib2map.tbl \
 	  */CAM_ABS_DATA */CAM_AEROPT_DATA \
@@ -77,10 +77,10 @@ if ( "$arg" == '-a' || "$arg" == '-aa' ) then
           */ishmael-qi-qc.bin */ishmael-qi-qr.bin ) >& /dev/null
      ( cd test/em_fire; rm -rf two_fires rain )
   else if ( "$arg" == '-aa' ) then
-    /bin/rm -f configure.wrf.backup
-    /bin/rm -f Registry/Registry.backup
-    /bin/rm -f run/namelist.input.backup.*
-    /bin/rm -f phys/module_sf_noahmpdrv.F phys/module_sf_noahmp_glacier.F \
+    rm -f configure.wrf.backup
+    rm -f Registry/Registry.backup
+    rm -f run/namelist.input.backup.*
+    rm -f phys/module_sf_noahmpdrv.F phys/module_sf_noahmp_glacier.F \
                phys/module_sf_noahmp_groundwater.F phys/module_sf_noahmplsm.F \
                run/MPTABLE.TBL
   endif

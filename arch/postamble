@@ -80,18 +80,18 @@ io_only:  esmf_time CONFIGURE_WRFIO_NF CONFIGURE_WRFIO_NFPAR CONFIGURE_WRFIO_PNF
 externals: io_only bundled external
 
 gen_comms_serial :
-	( /bin/rm -f $(WRF_SRC_ROOT_DIR)/tools/gen_comms.c )
+	( rm -f $(WRF_SRC_ROOT_DIR)/tools/gen_comms.c )
 
 module_dm_serial :
-	( if [ ! -e module_dm.F ] ; then /bin/cp module_dm_warning module_dm.F ; cat module_dm_stubs.F >> module_dm.F ; fi )
+	( if [ ! -e module_dm.F ] ; then cp module_dm_warning module_dm.F ; cat module_dm_stubs.F >> module_dm.F ; fi )
 
 gen_comms_rsllite :
 	( if [ ! -e $(WRF_SRC_ROOT_DIR)/tools/gen_comms.c ] ; then \
-          /bin/cp $(WRF_SRC_ROOT_DIR)/tools/gen_comms_warning $(WRF_SRC_ROOT_DIR)/tools/gen_comms.c ; \
+          cp $(WRF_SRC_ROOT_DIR)/tools/gen_comms_warning $(WRF_SRC_ROOT_DIR)/tools/gen_comms.c ; \
           cat $(WRF_SRC_ROOT_DIR)/external/RSL_LITE/gen_comms.c >> $(WRF_SRC_ROOT_DIR)/tools/gen_comms.c ; fi )
 
 module_dm_rsllite :
-	( if [ ! -e module_dm.F ] ; then /bin/cp module_dm_warning module_dm.F ; \
+	( if [ ! -e module_dm.F ] ; then cp module_dm_warning module_dm.F ; \
           cat $(WRF_SRC_ROOT_DIR)/external/RSL_LITE/module_dm.F >> module_dm.F ; fi )
 
 wrfio_nf : 

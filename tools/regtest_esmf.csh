@@ -36,8 +36,8 @@ endif
 skip:
 if ( -x main/wrf_SST_ESMF.exe ) then
   cd run
-  /bin/cp ../test/em_esmf_exp/namelist.input.jan00.ESMFSST namelist.input
-  /bin/rm -f rsl.*
+  cp ../test/em_esmf_exp/namelist.input.jan00.ESMFSST namelist.input
+  rm -f rsl.*
   echo $EXEC_WRF >! com
   sh com
   if ( -f rsl.error.0000 ) then

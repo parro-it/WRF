@@ -48,7 +48,7 @@ FC		=	 g95
 FCFLAGS		=        
 SOURCE_FORM     =        -ffree-form -ffree-line-length-huge
 CFLAGS          =
-CPP		=	 /usr/bin/cpp
+CPP		=	 /usrcpp
 # Map Background is WHITE:
 CPPFLAGS	=	 -I$(LIBINCLUDE) -C -P  -DMac
 # Map Background is BLACK:
