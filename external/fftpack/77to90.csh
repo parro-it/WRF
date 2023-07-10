@@ -1,4 +1,4 @@
-#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 
 #	The NCAR CISL fftpack (version 5) rename *.f90 to *.F
 

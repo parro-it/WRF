@@ -1,4 +1,4 @@
-#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 
 #sed 's/\(<font color=#cc0000>\)\([a-zA-Z0-9_][a-zA-Z0-9_]*\)\(<\/font>\)/\1<href=\" \2 \"> \2 <\/a> \3 /' frame/module_configure.F.html
 

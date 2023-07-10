@@ -1,4 +1,4 @@
-#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 
 #BSUB -a poe                            # at NCAR: bluevista
 #BSUB -R "span[ptile=32]"                # how many tasks per node (up to 8)

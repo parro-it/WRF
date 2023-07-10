@@ -1,4 +1,4 @@
-#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 
 if ( ( ${#argv} != 2 ) && ( ${#argv} != 3 ) ) then
 	echo usage: diffwrf gribfile1 gribfile2 <wgrib_exe_dir>

@@ -1,4 +1,4 @@
-#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 
 onintr clnup
 
@@ -22,7 +22,7 @@ if ( "$hst" == "ma" ) then   # manta
     setenv J "-j 4"
     set EXEC_WRF="qsub -sync y wrf.pbs"
     cat > wrf.pbs << H2
-#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 #PBS -l nodes=1:ppn=4
 #PBS -m ae
 #PBS -N WRF_ESMF_TEST
