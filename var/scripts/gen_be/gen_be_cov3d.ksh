@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env ksh
 #-----------------------------------------------------------------------
 
 export REL_DIR=${REL_DIR:-$HOME/trunk}

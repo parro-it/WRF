@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env ksh
 #------------------------------------------------------------------------
 #  Purpose: Computes contribution of 3D Field on the balanced part
 #           of 3D Field for WRFDA cv_options=6

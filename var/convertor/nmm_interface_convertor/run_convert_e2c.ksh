@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env ksh
 #-------------------------------------------------------------------------
 #Script for running the (E-grid to C-grid) convertor program
 #

@@ -1,4 +1,4 @@
-#! /bin/ksh -x
+#! /nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env -S ksh -x
 #-----------------------------------------------------------------------
 # Script ncsubsam.ksh
 # Purpose: Use ncks to subsample WRF forecast files.

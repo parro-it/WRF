@@ -1,4 +1,4 @@
-#!/bin/ksh
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env ksh
 #-----------------------------------------------------------------------
 # Purpose: To calculate ensemble perturbations in "standard fields".
 #          For Stage1 gen_be_gsi

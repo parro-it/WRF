@@ -1,4 +1,4 @@
-#!/bin/csh
+#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 
 # #BSUB -x                                # exlusive use of node (not_shared)
 # #BSUB -a mpich_gm                       # at NCAR: lightning
@@ -1430,10 +1430,10 @@ EOF
 	set OMPRUNCOMMAND	= 
 	echo "Compiler version info: " >! version_info
 	if      ( $LINUX_COMP == PGI ) then
-		set MPIRUNCOMMAND 	= ( /usr/local/mpich2-1.0.6p1-pgi/bin/mpirun -np $Num_Procs )
+		set MPIRUNCOMMAND 	= ( /mpirun -np $Num_Procs )
 		pgf90 -V | head -2 | tail -1 >>&! version_info
 	else if ( $LINUX_COMP == G95 ) then
-		set MPIRUNCOMMAND 	= ( /stink/gill/local/bin/mpirun -np $Num_Procs )
+		set MPIRUNCOMMAND 	= ( mpirun -np $Num_Procs )
 		g95 -v |& grep gcc >>&! version_info
 	endif
 	echo " " >>! version_info

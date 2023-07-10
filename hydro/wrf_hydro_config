@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env perl
 #input argument: Compiler/System sequential/parallel
 #This is called by WRF configuration only.
 if($#ARGV ne 1) {

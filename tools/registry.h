@@ -8,7 +8,7 @@
 #define MAX_TYPEDEFS 50   /* typedef history -ajb */
 
 /* defines of system commands */
-#define UNIQSORT "/bin/sort -u"
+#define UNIQSORT "sort -u"
 #define CATCOMM  "cat"
 #define RMCOMM   "rm"
 #define MVCOMM   "mv"

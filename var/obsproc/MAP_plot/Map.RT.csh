@@ -1,4 +1,4 @@
-#! /bin/csh
+#! #!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 ##################################################################
 #  This deck is used to produce a map of mesoscale observations 
 #  sites, and produce the data files for 4DVAR.

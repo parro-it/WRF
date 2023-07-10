@@ -1,4 +1,4 @@
-#!/bin/tcsh -f
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env -S tcsh -f
 
 #set echo
 set nonomatch
@@ -277,7 +277,7 @@ if ( $MULTI_INC == true ) then
         if ( $JOB == 'LSF' ) then
            if ( -e submit_lsf.csh ) rm -f submit_lsf.csh
 cat > submit_lsf.csh <<EOF
-#!/bin/csh
+#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 #
 ### LSF batch script to run an MPI application
 #
@@ -430,7 +430,7 @@ EOF
             if ( $JOB == 'LSF' ) then
                if ( -e submit_lsf.csh ) rm -f submit_lsf.csh
 cat > submit_lsf.csh <<EOF
-#!/bin/csh
+#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 #
 ## LSF batch script to run an MPI application
 #
@@ -529,7 +529,7 @@ EOF
       if ( $JOB == 'LSF' ) then
          if ( -e submit_lsf.csh ) rm -f submit_lsf.csh
 cat > submit_lsf.csh <<EOF
-#!/bin/csh
+#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 #
 ### LSF batch script to run an MPI application
 #
@@ -707,7 +707,7 @@ else  ## if NOT multi-resolution incremental 3D/4DVAR, no stop outer loop
     if ( $JOB == 'LSF' ) then
        if ( -e submit_lsf.csh ) rm -f submit_lsf.csh
 cat > submit_lsf.csh <<EOF
-#!/bin/csh
+#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 #
 ### LSF batch script to run an MPI application
 #

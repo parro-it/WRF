@@ -1,4 +1,4 @@
-#!/bin/tcsh -f
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env -S tcsh -f
 #   script            1:VAR4D 2:MULTI_INC 3:use_cvt 4:use_vp 5:WORK_DIR  6/7:THIN_FACTOR 8:BE1 9:BE2
 
 ./run_mri3d4dvar.csh_pbs  true  true  false true ztd30min_mri4dvar_6km6km_512core 3 3  6km  6km > &! log.66

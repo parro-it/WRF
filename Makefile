@@ -194,7 +194,7 @@ em_fire : wrf
 	( cd test/em_fire ; rm -f wrf.exe ; ln -s ../../main/wrf.exe . )
 	( cd test/em_fire ; rm -f ideal.exe ; ln -s ../../main/ideal.exe . )
 	( cd test/em_fire ; rm -f README.namelist ; ln -s ../../run/README.namelist . )
-	( cd test/em_fire ; /bin/sh create_links.sh )
+	( cd test/em_fire ; sh create_links.sh )
 	( cd run ; rm -f ideal.exe ; ln -s ../main/ideal.exe . )
 	( cd run ; if test -f namelist.input ; then \
 		cp -f namelist.input namelist.input.backup.`date +%Y-%m-%d_%H_%M_%S` ; fi ; \

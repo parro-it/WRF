@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env -S perl -w
 # 
 # Script to replace all incorrect "include" statements in WRF trunk. For user-defined files, 
 # include statements must use quotes, not brackets, according to the C standard:

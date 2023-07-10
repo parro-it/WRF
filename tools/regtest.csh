@@ -1,4 +1,4 @@
-#!/bin/csh
+#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 
 #BSUB -a poe                            # at NCAR: bluevista
 #BSUB -R "span[ptile=32]"                # how many tasks per node (up to 8)
@@ -320,12 +320,12 @@ endif
 if ( $KPP == TRUE ) then
 	setenv WRF_KPP 1
 	setenv FLEX_LIB_DIR /usr/local/lib
-	setenv YACC "/usr/bin/yacc -d"
+	setenv YACC "yacc -d"
 	set CHEM_OPT = 104
 else if ( $KPP == FALSE ) then
 	setenv WRF_KPP 0 
 	setenv FLEX_LIB_DIR
-	setenv YACC "/usr/bin/yacc -d"
+	setenv YACC "yacc -d"
 	set CHEM_OPT =
 endif
 
@@ -1992,10 +1992,10 @@ EOF
 	set OMPRUNCOMMAND	= 
 	echo "Compiler version info: " >! version_info
 	if      ( $LINUX_COMP == PGI ) then
-		set MPIRUNCOMMAND 	= ( /usr/local/mpich2-1.0.6p1-pgi/bin/mpirun -np $Num_Procs -machinefile $Mach )
+		set MPIRUNCOMMAND 	= ( mpirun -np $Num_Procs -machinefile $Mach )
 		pgf90 -V | head -2 | tail -1 >>&! version_info
 	else if ( $LINUX_COMP == G95 ) then
-		set MPIRUNCOMMAND 	= ( /usr/local/mpich/bin/mpirun -np $Num_Procs -machinefile $Mach )
+		set MPIRUNCOMMAND 	= ( mpirun -np $Num_Procs -machinefile $Mach )
 		g95 -v |& grep gcc >>&! version_info
 	endif
 	echo " " >>! version_info

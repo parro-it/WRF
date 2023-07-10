@@ -2249,7 +2249,7 @@ ARFLAGS         =      ru
 M4              =      m4
 RANLIB          =      ranlib
 RLFLAGS         =
-CC_TOOLS        =      /usr/bin/gcc -Wall
+CC_TOOLS        =      gcc -Wall
 NETCDFPAR_BUILD	=      CONFIGURE_NETCDFPAR_BUILD
 
 #insert new stanza before the Fujitsu block, keep Fujitsu at the end of the list

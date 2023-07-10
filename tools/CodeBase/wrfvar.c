@@ -334,7 +334,7 @@ fprintf(stderr,"X %s <- %s %d\n", s3, vv2, i ) ;
 
 
 #if 0
-#!/bin/perl
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env perl
 
 $dbdir = "tools/code_dbase" ;
 

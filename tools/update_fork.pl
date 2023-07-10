@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env -S perl -w
 
 # Script for easily updating your fork of the main WRF repository
 #

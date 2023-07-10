@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env perl
 #
 # Configuration script for WRF prototype code
 # 

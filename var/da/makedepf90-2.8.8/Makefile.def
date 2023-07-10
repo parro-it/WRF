@@ -44,7 +44,7 @@ bindir = ${exec_prefix}/bin
 mandir = ${prefix}/man
 
 # How to install stuff
-INSTALL=/bin/install -c
+INSTALL=install -c
 INSTALL_PROGRAM=${INSTALL}
 INSTALL_DATA=${INSTALL} -m 644
 

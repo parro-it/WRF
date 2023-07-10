@@ -1,4 +1,4 @@
-#!/bin/csh
+#!#!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh
 #
 #BSUB -P 64000400           # account
 #BSUB -n 4                  # number of tasks
@@ -21,5 +21,5 @@ unalias cd cp rm ls pushd popd mv
 setenv TARGET_CPU_LIST "-1"
 
 # Run WRF+CPL+SST
-mpirun.lsf /usr/local/bin/launch ../main/wrf_SST_ESMF.exe
+mpirun.lsf launch ../main/wrf_SST_ESMF.exe
 

@@ -50,7 +50,7 @@ if (! $?PROCESSOR) then
 endif 
 
 if ( `uname` == "AIX" ) then
-   # Brain dead Aix /bin/csh cannot handle arguments to 
+   # Brain dead Aix #!/nix/store/l2xyarvzahpz3fysr9hqbvcsgv5gnrnk-coreutils-9.1/bin/env tcsh cannot handle arguments to 
    # sourced scripts, so force use of ibm
    setenv COMPILER ibm
 else
